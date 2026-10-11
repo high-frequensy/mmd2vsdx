@@ -1,0 +1,11 @@
+flowchart LR
+  A[Rect] --> B{Decision}
+  B -->|yes| C([Stadium])
+  B -.->|no| D((Circle))
+  C ==> E[(Database)]
+  D --- F>Flag]
+  subgraph G[Outer]
+    subgraph H[Inner]
+      E
+    end
+  end

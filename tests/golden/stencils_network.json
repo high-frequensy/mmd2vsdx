@@ -1,0 +1,410 @@
+{
+ "page": [
+  9.61,
+  3.56
+ ],
+ "shapes": [
+  {
+   "name": "core",
+   "master": null,
+   "text": [
+    [
+     "Data centre",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#2DD4BF",
+    1.0,
+    "1"
+   ],
+   "fill": "#F0FDFA",
+   "text_box": [
+    1.14,
+    1.14,
+    0.0,
+    0.0
+   ],
+   "box": [
+    6.08,
+    0.48,
+    3.04,
+    2.59
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,app,db))",
+   "container": true
+  },
+  {
+   "name": "dmz",
+   "master": null,
+   "text": [
+    [
+     "DMZ",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#E879F9",
+    1.0,
+    "1"
+   ],
+   "fill": "#FDF4FF",
+   "text_box": [
+    1.01,
+    1.01,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.12,
+    0.73,
+    2.34,
+    2.09
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,fw,lb))",
+   "container": true
+  },
+  {
+   "name": "users",
+   "master": "3",
+   "text": [
+    [
+     "Users",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    null
+   ],
+   "fill": null,
+   "text_box": [
+    0.35,
+    -0.21,
+    0.44,
+    0.26,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {},
+   "arrows": [
+    null,
+    null
+   ],
+   "reroute": null,
+   "route": -2
+  },
+  {
+   "name": "fw",
+   "master": "4",
+   "text": [
+    [
+     "Firewall",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    null
+   ],
+   "fill": null,
+   "text_box": [
+    0.31,
+    -0.21,
+    0.56,
+    0.26,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {},
+   "arrows": [
+    null,
+    null
+   ],
+   "reroute": null,
+   "route": -2
+  },
+  {
+   "name": "lb",
+   "master": "5",
+   "text": [
+    [
+     "Load balancer",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    null
+   ],
+   "fill": null,
+   "text_box": [
+    0.35,
+    -0.21,
+    0.99,
+    0.26,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {},
+   "arrows": [
+    null,
+    null
+   ],
+   "reroute": null,
+   "route": -2
+  },
+  {
+   "name": "app",
+   "master": "5",
+   "text": [
+    [
+     "App server",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    null
+   ],
+   "fill": null,
+   "text_box": [
+    0.22,
+    -0.21,
+    0.77,
+    0.26,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {},
+   "arrows": [
+    null,
+    null
+   ],
+   "reroute": null,
+   "route": -2
+  },
+  {
+   "name": "db",
+   "master": "6",
+   "text": [
+    [
+     "Database",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    null
+   ],
+   "fill": null,
+   "text_box": [
+    0.5,
+    -0.21,
+    0.69,
+    0.26,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {},
+   "arrows": [
+    null,
+    null
+   ],
+   "reroute": null,
+   "route": -2
+  },
+  {
+   "name": "cloud",
+   "master": "7",
+   "text": [
+    [
+     "Internet",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    null
+   ],
+   "fill": null,
+   "text_box": [
+    0.5,
+    -0.21,
+    0.56,
+    0.26,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {},
+   "arrows": [
+    null,
+    null
+   ],
+   "reroute": null,
+   "route": -2
+  },
+  {
+   "name": "users to cloud",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "users:Connections.X1",
+    "end": "cloud:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "cloud to fw",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "cloud:Connections.X2",
+    "end": "fw:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "fw to lb",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "fw:Connections.X2",
+    "end": "lb:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "lb to app",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "lb:Connections.X2",
+    "end": "app:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  },
+  {
+   "name": "app to db",
+   "master": "2",
+   "text": [
+    [
+     "SQL",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.55,
+    0.01,
+    0.31,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "app:Connections.X2",
+    "end": "db:Connections.X1"
+   },
+   "arrows": [
+    "4",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  }
+ ]
+}

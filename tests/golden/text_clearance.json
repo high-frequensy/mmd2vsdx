@@ -1,0 +1,1510 @@
+{
+ "page": [
+  15.39,
+  19.97
+ ],
+ "shapes": [
+  {
+   "name": "PS",
+   "master": null,
+   "text": [
+    [
+     "Platform services",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#FB923C",
+    1.0,
+    "1"
+   ],
+   "fill": "#FFF7ED",
+   "text_box": [
+    4.69,
+    4.69,
+    -0.0,
+    0.0
+   ],
+   "box": [
+    2.91,
+    0.48,
+    10.5,
+    1.44
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,PROM,ING,DNS,REG,WEB))",
+   "container": true
+  },
+  {
+   "name": "CN",
+   "master": null,
+   "text": [
+    [
+     "Compute nodes - RHCOS",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#2DD4BF",
+    1.0,
+    "1"
+   ],
+   "fill": "#F0FDFA",
+   "text_box": [
+    1.25,
+    1.25,
+    -0.0,
+    0.0
+   ],
+   "box": [
+    5.38,
+    3.85,
+    4.19,
+    3.03
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,KUBELET,CRIO,OVN,PODS))",
+   "container": true
+  },
+  {
+   "name": "CP",
+   "master": null,
+   "text": [
+    [
+     "Control plane nodes - RHCOS",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#E879F9",
+    1.0,
+    "1"
+   ],
+   "fill": "#FDF4FF",
+   "text_box": [
+    5.32,
+    5.32,
+    -0.0,
+    0.0
+   ],
+   "box": [
+    1.45,
+    10.55,
+    12.6,
+    7.51
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,CVO,CO,SCH,KCM,API,ETCD,MCO,OLM,MAPI))",
+   "container": true
+  },
+  {
+   "name": "admins",
+   "master": null,
+   "text": [
+    [
+     "Admins /\nDevelopers / oc,\nconsole, GitOps",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    12.96,
+    18.58,
+    1.95,
+    0.91
+   ],
+   "geometry_sections": 208
+  },
+  {
+   "name": "CVO",
+   "master": null,
+   "text": [
+    [
+     "Cluster Version\nOperator",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.53,
+    16.87,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "CO",
+   "master": null,
+   "text": [
+    [
+     "Cluster Operators:\nauthentication,\ningress, dns,\nnetwork, storage,\nmonitoring, image-\nregistry",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.91,
+    13.97,
+    1.58,
+    1.56
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "SCH",
+   "master": null,
+   "text": [
+    [
+     "kube-scheduler",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    12.22,
+    13.97,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "KCM",
+   "master": null,
+   "text": [
+    [
+     "kube-controller-\nmanager",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    10.12,
+    13.97,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "API",
+   "master": null,
+   "text": [
+    [
+     "kube-apiserver /\nopenshift-\napiserver / oauth",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    11.34,
+    12.31,
+    1.58,
+    0.91
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "ETCD",
+   "master": null,
+   "text": [
+    [
+     "etcd",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.21,
+    0.0
+   ],
+   "box": [
+    11.82,
+    10.8,
+    1.5,
+    0.89
+   ],
+   "geometry_sections": 2,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "MCO",
+   "master": null,
+   "text": [
+    [
+     "Machine Config\nOperator",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.81,
+    14.4,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "OLM",
+   "master": null,
+   "text": [
+    [
+     "Operator Lifecycle\nManager",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    1.7,
+    14.4,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "MAPI",
+   "master": null,
+   "text": [
+    [
+     "Machine API\nOperator",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    8.01,
+    14.4,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CP))"
+  },
+  {
+   "name": "KUBELET",
+   "master": null,
+   "text": [
+    [
+     "kubelet",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.74,
+    5.91,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CN))"
+  },
+  {
+   "name": "CRIO",
+   "master": null,
+   "text": [
+    [
+     "CRI-O",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.74,
+    5.19,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CN))"
+  },
+  {
+   "name": "OVN",
+   "master": null,
+   "text": [
+    [
+     "OVN-Kubernetes",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.63,
+    5.19,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CN))"
+  },
+  {
+   "name": "PODS",
+   "master": null,
+   "text": [
+    [
+     "Application pods",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    6.68,
+    4.1,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,CN))"
+  },
+  {
+   "name": "PROM",
+   "master": null,
+   "text": [
+    [
+     "Prometheus /\nAlertmanager",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.16,
+    0.73,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,PS))"
+  },
+  {
+   "name": "ING",
+   "master": null,
+   "text": [
+    [
+     "Ingress: HAProxy\nrouter",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.37,
+    0.73,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,PS))"
+  },
+  {
+   "name": "DNS",
+   "master": null,
+   "text": [
+    [
+     "CoreDNS",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.26,
+    0.95,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,PS))"
+  },
+  {
+   "name": "REG",
+   "master": null,
+   "text": [
+    [
+     "Internal image\nregistry",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    11.58,
+    0.73,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,PS))"
+  },
+  {
+   "name": "WEB",
+   "master": null,
+   "text": [
+    [
+     "Web console",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    9.47,
+    0.84,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,PS))"
+  },
+  {
+   "name": "OSUS",
+   "master": null,
+   "text": [
+    [
+     "OpenShift Update\nService",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.21,
+    0.0
+   ],
+   "box": [
+    0.48,
+    7.62,
+    1.5,
+    1.11
+   ],
+   "geometry_sections": 2
+  },
+  {
+   "name": "CAT",
+   "master": null,
+   "text": [
+    [
+     "Operator catalogs",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.21,
+    0.0
+   ],
+   "box": [
+    2.08,
+    9.14,
+    1.5,
+    0.89
+   ],
+   "geometry_sections": 2
+  },
+  {
+   "name": "CLOUD",
+   "master": null,
+   "text": [
+    [
+     "Cloud / hypervisor\n/ bare metal\nprovider",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.21,
+    0.0
+   ],
+   "box": [
+    7.78,
+    7.4,
+    1.5,
+    1.32
+   ],
+   "geometry_sections": 2
+  },
+  {
+   "name": "EXT",
+   "master": null,
+   "text": [
+    [
+     "External clients",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.04,
+    2.65,
+    1.78,
+    0.47
+   ],
+   "geometry_sections": 208
+  },
+  {
+   "name": "admins to API",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "admins:Connections.X1",
+    "end": "API:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "CVO to CO",
+   "master": "2",
+   "text": [
+    [
+     "manages",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    2.15,
+    -0.98,
+    0.62,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "CVO:Connections.X1",
+    "end": "CO:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "CVO to MCO",
+   "master": "2",
+   "text": [
+    [
+     "manages",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.28,
+    -0.98,
+    0.62,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "CVO:Connections.X2",
+    "end": "MCO:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "CVO to OLM",
+   "master": "2",
+   "text": [
+    [
+     "manages",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    -1.6,
+    -0.98,
+    0.62,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "CVO:Connections.X3",
+    "end": "OLM:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "CVO to MAPI",
+   "master": "2",
+   "text": [
+    [
+     "manages",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    4.03,
+    -0.98,
+    0.62,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "CVO:Connections.X4",
+    "end": "MAPI:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "CVO to OSUS",
+   "master": "2",
+   "text": [
+    [
+     "update graph",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    -2.64,
+    -7.29,
+    0.88,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "CVO:Connections.X5",
+    "end": "OSUS:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 5
+  },
+  {
+   "name": "CO to API",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "CO:Connections.X2",
+    "end": "API:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "SCH to API",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "SCH:Connections.X1",
+    "end": "API:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "KCM to API",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "KCM:Connections.X1",
+    "end": "API:Connections.X4"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "API to ETCD",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "API:Connections.X5",
+    "end": "ETCD:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "KUBELET to API",
+   "master": "2",
+   "text": [
+    [
+     "watch",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    2.27,
+    3.21,
+    0.4,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "KUBELET:Connections.X1",
+    "end": "API:Connections.X6"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 9
+  },
+  {
+   "name": "MCO to KUBELET",
+   "master": "2",
+   "text": [
+    [
+     "MachineConfig to nodes",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    1.39,
+    -4.82,
+    1.59,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "MCO:Connections.X2",
+    "end": "KUBELET:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 8
+  },
+  {
+   "name": "OLM to CAT",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "OLM:Connections.X2",
+    "end": "CAT:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "MAPI to CLOUD",
+   "master": "2",
+   "text": [
+    [
+     "Machines",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    -0.28,
+    -4.82,
+    0.65,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "MAPI:Connections.X2",
+    "end": "CLOUD:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "CLOUD to KUBELET",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "CLOUD:Connections.X2",
+    "end": "KUBELET:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "KUBELET to CRIO",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "KUBELET:Connections.X4",
+    "end": "CRIO:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "CRIO to PODS",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "CRIO:Connections.X2",
+    "end": "PODS:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "OVN to PODS",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "OVN:Connections.X1",
+    "end": "PODS:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "EXT to ING",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "EXT:Connections.X1",
+    "end": "ING:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  },
+  {
+   "name": "ING to PODS",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "ING:Connections.X2",
+    "end": "PODS:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 6
+  },
+  {
+   "name": "PODS to DNS",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "PODS:Connections.X4",
+    "end": "DNS:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 7
+  },
+  {
+   "name": "PODS to REG",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "PODS:Connections.X5",
+    "end": "REG:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 7
+  },
+  {
+   "name": "CO to PROM",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "CO:Connections.X3",
+    "end": "PROM:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 12
+  },
+  {
+   "name": "PROM to PODS",
+   "master": "2",
+   "text": [
+    [
+     "scrape",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [
+    1.11,
+    1.46,
+    0.46,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "PROM:Connections.X2",
+    "end": "PODS:Connections.X6"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 6
+  }
+ ]
+}

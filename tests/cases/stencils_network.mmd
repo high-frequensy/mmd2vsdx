@@ -1,0 +1,13 @@
+flowchart LR
+  users@{ icon: "visio:PERIPH/User", label: "Users" }
+  subgraph dmz[DMZ]
+    fw@{ icon: "visio:PERIPH/Firewall", label: "Firewall" }
+    lb@{ icon: "visio:PERIPH/Server", label: "Load balancer" }
+  end
+  subgraph core[Data centre]
+    app@{ icon: "visio:PERIPH/Server", label: "App server", h: 60 }
+    db@{ icon: "visio:PERIPH/Mainframe", label: "Database" }
+  end
+  cloud@{ icon: "visio:NETLOC/Cloud", label: "Internet" }
+  users --> cloud --> fw --> lb --> app
+  app <-->|SQL| db

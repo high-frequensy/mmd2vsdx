@@ -1,0 +1,248 @@
+{
+ "page": [
+  3.78,
+  6.18
+ ],
+ "shapes": [
+  {
+   "name": "G",
+   "master": null,
+   "text": [
+    [
+     "Group",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#E879F9",
+    1.0,
+    "1"
+   ],
+   "fill": "#FDF4FF",
+   "text_box": [
+    0.84,
+    0.84,
+    0.01,
+    0.0
+   ],
+   "box": [
+    0.48,
+    2.93,
+    2.08,
+    1.28
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,B))",
+   "container": true
+  },
+  {
+   "name": "A",
+   "master": null,
+   "text": [
+    [
+     "Start here",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.02,
+    0.0
+   ],
+   "box": [
+    1.54,
+    4.73,
+    1.58,
+    0.42
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "Middle step with a\nfairly long label",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.02,
+    0.0
+   ],
+   "box": [
+    0.73,
+    3.18,
+    1.58,
+    0.58
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,G))"
+  },
+  {
+   "name": "C",
+   "master": null,
+   "text": [
+    [
+     "End",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.02,
+    0.0
+   ],
+   "box": [
+    1.37,
+    0.48,
+    1.93,
+    1.93
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "Title",
+   "master": null,
+   "text": [
+    [
+     "Styled edges and plain labels",
+     "#28253D",
+     13.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.67,
+    5.49,
+    2.48,
+    0.21
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#D62728",
+    4.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  },
+  {
+   "name": "B to C",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "B:Connections.X2",
+    "end": "C:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "A to C",
+   "master": "2",
+   "text": [
+    [
+     "skip",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#1F77B4",
+    2.0,
+    "2"
+   ],
+   "fill": null,
+   "text_box": [
+    0.58,
+    -1.16,
+    0.28,
+    0.17,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "A:Connections.X2",
+    "end": "C:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  }
+ ]
+}

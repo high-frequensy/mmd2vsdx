@@ -1,0 +1,707 @@
+{
+ "page": [
+  24.51,
+  4.55
+ ],
+ "shapes": [
+  {
+   "name": "sg2",
+   "master": null,
+   "text": [
+    [
+     "Second",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#CC9900",
+    3.0,
+    "1"
+   ],
+   "fill": "#FFFFEE",
+   "text_box": [
+    1.71,
+    1.71,
+    -0.0,
+    0.0
+   ],
+   "box": [
+    2.8,
+    0.48,
+    3.92,
+    1.22
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,q1,q2))",
+   "container": true
+  },
+  {
+   "name": "sg1",
+   "master": null,
+   "text": [
+    [
+     "sg1",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#E879F9",
+    1.0,
+    "1"
+   ],
+   "fill": "#FDF4FF",
+   "text_box": [
+    2.4,
+    2.4,
+    0.0,
+    0.0
+   ],
+   "box": [
+    16.98,
+    2.04,
+    5.04,
+    1.65
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,e5,f6))",
+   "container": true
+  },
+  {
+   "name": "a-1",
+   "master": null,
+   "text": [
+    [
+     "dash id",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    1.56,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "b_2",
+   "master": null,
+   "text": [
+    [
+     "underscore id",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.13,
+    2.86,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "c3",
+   "master": null,
+   "text": [
+    [
+     "num",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    10.2,
+    2.13,
+    1.94,
+    1.94
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "d4",
+   "master": null,
+   "text": [
+    [
+     "d4",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    13.54,
+    2.86,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "e5",
+   "master": null,
+   "text": [
+    [
+     "e5",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    17.86,
+    2.64,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,sg1))"
+  },
+  {
+   "name": "f6",
+   "master": null,
+   "text": [
+    [
+     "f6",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    20.19,
+    2.29,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,sg1))"
+  },
+  {
+   "name": "z",
+   "master": null,
+   "text": [
+    [
+     "z",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    22.44,
+    3.54,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "q1",
+   "master": null,
+   "text": [
+    [
+     "q1",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.05,
+    0.73,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,sg2))"
+  },
+  {
+   "name": "q2",
+   "master": null,
+   "text": [
+    [
+     "q2",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.88,
+    0.73,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,sg2))"
+  },
+  {
+   "name": "a-1 to b_2",
+   "master": "2",
+   "text": [
+    [
+     "label text",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#666666",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    2.64,
+    1.24,
+    0.6,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "a-1:Connections.X1",
+    "end": "b_2:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "b_2 to c3",
+   "master": "2",
+   "text": [
+    [
+     "plain label",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#666666",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.75,
+    0.01,
+    0.68,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "b_2:Connections.X2",
+    "end": "c3:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "0"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "c3 to d4",
+   "master": "2",
+   "text": [
+    [
+     "md",
+     "#28253D",
+     10.5,
+     1
+    ],
+    [
+     " label",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#666666",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [
+    0.7,
+    0.01,
+    0.59,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "c3:Connections.X2",
+    "end": "d4:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "d4 to e5",
+   "master": "2",
+   "text": [
+    [
+     "thick",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#666666",
+    3.5,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.77,
+    -0.0,
+    0.32,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "d4:Connections.X2",
+    "end": "e5:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "d4 to f6",
+   "master": "2",
+   "text": [
+    [
+     "thick",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#666666",
+    3.5,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.77,
+    -0.64,
+    0.32,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "d4:Connections.X3",
+    "end": "f6:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 7
+  },
+  {
+   "name": "f6 to a-1",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#666666",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "f6:Connections.X2",
+    "end": "a-1:Connections.X2"
+   },
+   "arrows": [
+    "4",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 12
+  },
+  {
+   "name": "e5 to f6",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#666666",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "e5:Connections.X2",
+    "end": "f6:Connections.X3"
+   },
+   "arrows": [
+    "23",
+    "23"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "e5 to d4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#666666",
+    3.5,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "e5:Connections.X3",
+    "end": "d4:Connections.X4"
+   },
+   "arrows": [
+    "42",
+    "42"
+   ],
+   "reroute": "1",
+   "route": 6
+  },
+  {
+   "name": "sg1 to z",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#666666",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "sg1:Connections.X1",
+    "end": "z:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "z to sg1",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#666666",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "z:Connections.X2",
+    "end": "sg1:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 5
+  },
+  {
+   "name": "q1 to q2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#666666",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "q1:Connections.X1",
+    "end": "q2:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "a-1 to q1",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#666666",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a-1:Connections.X3",
+    "end": "q1:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  }
+ ]
+}

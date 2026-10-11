@@ -1,0 +1,233 @@
+{
+ "page": [
+  7.66,
+  2.31
+ ],
+ "shapes": [
+  {
+   "name": "A",
+   "master": null,
+   "text": [
+    [
+     "bold",
+     "#28253D",
+     10.5,
+     1
+    ],
+    [
+     " ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "italic",
+     "#28253D",
+     10.5,
+     2
+    ],
+    [
+     " ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "both",
+     "#28253D",
+     10.5,
+     3
+    ],
+    [
+     "\nplain",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    0.81,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "under",
+     "#28253D",
+     10.5,
+     4
+    ],
+    [
+     " ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "strike",
+     "#28253D",
+     10.5,
+     16
+    ],
+    [
+     " ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "bi",
+     "#28253D",
+     10.5,
+     3
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    2.48,
+    0.92,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "C",
+   "master": null,
+   "text": [
+    [
+     "Line one\nLine two that is\nmuch longer than\nthe first one so it\nwraps around",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.6,
+    0.48,
+    1.58,
+    1.34
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "B to C",
+   "master": "2",
+   "text": [
+    [
+     "edge ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "md",
+     "#28253D",
+     10.5,
+     1
+    ],
+    [
+     " ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "it",
+     "#28253D",
+     10.5,
+     2
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.77,
+    0.01,
+    0.72,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "B:Connections.X2",
+    "end": "C:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  }
+ ]
+}

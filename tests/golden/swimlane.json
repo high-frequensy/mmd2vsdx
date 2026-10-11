@@ -1,0 +1,427 @@
+{
+ "page": [
+  18.09,
+  7.44
+ ],
+ "shapes": [
+  {
+   "name": "L3",
+   "master": null,
+   "text": [
+    [
+     "Bank",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#FB923C",
+    1.0,
+    "1"
+   ],
+   "fill": "#FFF7ED",
+   "text_box": [
+    0.15,
+    0.96,
+    0.35,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    0.48,
+    17.13,
+    1.92
+   ],
+   "geometry_sections": 2,
+   "relationships": "SUM(DEPENDSON(1,e))",
+   "container": true
+  },
+  {
+   "name": "L2",
+   "master": null,
+   "text": [
+    [
+     "Shop",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#2DD4BF",
+    1.0,
+    "1"
+   ],
+   "fill": "#F0FDFA",
+   "text_box": [
+    0.15,
+    1.31,
+    0.36,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    2.41,
+    17.13,
+    2.62
+   ],
+   "geometry_sections": 2,
+   "relationships": "SUM(DEPENDSON(1,c,d))",
+   "container": true
+  },
+  {
+   "name": "L1",
+   "master": null,
+   "text": [
+    [
+     "Customer",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#E879F9",
+    1.0,
+    "1"
+   ],
+   "fill": "#FDF4FF",
+   "text_box": [
+    0.15,
+    0.96,
+    0.65,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    5.03,
+    17.13,
+    1.92
+   ],
+   "geometry_sections": 2,
+   "relationships": "SUM(DEPENDSON(1,a,b))",
+   "container": true
+  },
+  {
+   "name": "a",
+   "master": null,
+   "text": [
+    [
+     "Order",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.96,
+    6.11,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,L1))"
+  },
+  {
+   "name": "b",
+   "master": null,
+   "text": [
+    [
+     "Pay",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.95,
+    6.11,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,L1))"
+  },
+  {
+   "name": "c",
+   "master": null,
+   "text": [
+    [
+     "Pack",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    10.94,
+    3.48,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,L2))"
+  },
+  {
+   "name": "d",
+   "master": null,
+   "text": [
+    [
+     "Ship",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    15.92,
+    3.48,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,L2))"
+  },
+  {
+   "name": "e",
+   "master": null,
+   "text": [
+    [
+     "Charge",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.95,
+    0.86,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,L3))"
+  },
+  {
+   "name": "a to b",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a:Connections.X1",
+    "end": "b:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "c to d",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "c:Connections.X1",
+    "end": "d:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "b to e",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "b:Connections.X2",
+    "end": "e:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "e to c",
+   "master": "2",
+   "text": [
+    [
+     "ok",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    2.06,
+    2.39,
+    0.17,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "e:Connections.X2",
+    "end": "c:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "a to d",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a:Connections.X2",
+    "end": "d:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "d to b",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "d:Connections.X3",
+    "end": "b:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  }
+ ]
+}

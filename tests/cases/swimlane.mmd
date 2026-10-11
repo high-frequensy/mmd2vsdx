@@ -1,0 +1,18 @@
+---
+config:
+  layout: swimlane
+---
+flowchart LR
+  subgraph L1[Customer]
+    a[Order] --> b[Pay]
+  end
+  subgraph L2[Shop]
+    c[Pack] --> d[Ship]
+  end
+  subgraph L3[Bank]
+    e[Charge]
+  end
+  b --> e
+  e -->|ok| c
+  a --> d
+  d -.-> b

@@ -1,0 +1,21 @@
+flowchart LR
+  a-1[dash id] -- label text --> b_2[underscore id]
+  b_2 ---|"plain label"| c3((num))
+  c3 -.->|"`**md** label`"| d4
+  d4 ==>|thick| e5 & f6
+  f6 <-.-> a-1
+  e5 x-.-x f6
+  e5 o==o d4
+  subgraph sg1
+    e5
+    f6
+  end
+  sg1 --> z
+  z --> sg1
+  subgraph sg2 [Second]
+    direction TB
+    q1 --> q2
+  end
+  a-1 --> q1
+  style sg2 fill:#ffe,stroke:#c90,stroke-width:3px
+  linkStyle default stroke:#666

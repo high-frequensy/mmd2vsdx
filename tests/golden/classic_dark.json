@@ -1,0 +1,399 @@
+{
+ "page": [
+  6.37,
+  7.2
+ ],
+ "shapes": [
+  {
+   "name": "X",
+   "master": null,
+   "text": [],
+   "line": [
+    "#FFFFFF",
+    1.0,
+    "1"
+   ],
+   "fill": "#474949",
+   "text_box": [
+    1.45,
+    1.45,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    0.48,
+    2.91,
+    2.25
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,C,D))",
+   "container": true
+  },
+  {
+   "name": "A",
+   "master": null,
+   "text": [
+    [
+     "Start",
+     "#CCCCCC",
+     12.0,
+     0
+    ]
+   ],
+   "line": [
+    "#CCCCCC",
+    1.0,
+    "1"
+   ],
+   "fill": "#1F2020",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.01,
+    6.15,
+    1.88,
+    0.56
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "Is it?",
+     "#CCCCCC",
+     12.0,
+     0
+    ]
+   ],
+   "line": [
+    "#CCCCCC",
+    1.0,
+    "1"
+   ],
+   "fill": "#1F2020",
+   "text_box": [
+    0.0,
+    0.01,
+    0.0,
+    0.0
+   ],
+   "box": [
+    1.83,
+    3.92,
+    1.81,
+    1.81
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "C",
+   "master": null,
+   "text": [
+    [
+     "OK",
+     "#CCCCCC",
+     12.0,
+     0
+    ]
+   ],
+   "line": [
+    "#CCCCCC",
+    1.0,
+    "1"
+   ],
+   "fill": "#1F2020",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.73,
+    1.92,
+    1.88,
+    0.56
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,X))"
+  },
+  {
+   "name": "D",
+   "master": null,
+   "text": [
+    [
+     "Rethink",
+     "#CCCCCC",
+     12.0,
+     0
+    ]
+   ],
+   "line": [
+    "#CCCCCC",
+    1.0,
+    "1"
+   ],
+   "fill": "#1F2020",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    1.26,
+    0.73,
+    1.88,
+    0.56
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,X))"
+  },
+  {
+   "name": "E",
+   "master": null,
+   "text": [
+    [
+     "End",
+     "#CCCCCC",
+     12.0,
+     0
+    ]
+   ],
+   "line": [
+    "#CCCCCC",
+    1.0,
+    "1"
+   ],
+   "fill": "#1F2020",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.01,
+    2.17,
+    1.88,
+    0.56
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "B to C",
+   "master": "2",
+   "text": [
+    [
+     "Yes",
+     "#CCCCCC",
+     12.0,
+     0
+    ]
+   ],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    -0.67,
+    -0.94,
+    0.29,
+    0.25,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "B:Connections.X2",
+    "end": "C:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  },
+  {
+   "name": "C to D",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "C:Connections.X2",
+    "end": "D:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "D to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "D:Connections.X2",
+    "end": "B:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  },
+  {
+   "name": "B to E",
+   "master": "2",
+   "text": [
+    [
+     "No",
+     "#CCCCCC",
+     12.0,
+     0
+    ]
+   ],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    1.4,
+    -0.94,
+    0.23,
+    0.25,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "B:Connections.X4",
+    "end": "E:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "E to E",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "E:Connections.X2",
+    "end": "E:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "A to E",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X2",
+    "end": "E:Connections.X4"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "A to E",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#D3D3D3",
+    1.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X3",
+    "end": "E:Connections.X5"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  }
+ ]
+}

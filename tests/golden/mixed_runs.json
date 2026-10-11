@@ -1,0 +1,191 @@
+{
+ "page": [
+  6.55,
+  2.14
+ ],
+ "shapes": [
+  {
+   "name": "A",
+   "master": null,
+   "text": [
+    [
+     "red",
+     "#D62728",
+     10.5,
+     0
+    ],
+    [
+     " and ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "big",
+     "#28253D",
+     16.5,
+     0
+    ],
+    [
+     "\nmono",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     " text",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    0.67,
+    1.58,
+    0.82
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "Small class",
+     "#1F77B4",
+     7.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    2.48,
+    1.25,
+    1.58,
+    0.41
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "C",
+   "master": null,
+   "text": [
+    [
+     "End",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.48,
+    0.48,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "A to C",
+   "master": "2",
+   "text": [
+    [
+     "go",
+     "#008000",
+     10.5,
+     0
+    ],
+    [
+     " on",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    1.21,
+    -0.26,
+    0.39,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "A:Connections.X2",
+    "end": "C:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  }
+ ]
+}

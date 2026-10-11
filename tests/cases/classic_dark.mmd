@@ -1,0 +1,18 @@
+---
+config:
+  look: classic
+  theme: dark
+---
+flowchart TD
+  A[Start] --> B{Is it?}
+  B -->|Yes| C[OK]
+  C --> D[Rethink]
+  D --> B
+  B ---->|No| E[End]
+  subgraph X[" "]
+    C
+    D
+  end
+  E --> E
+  A --> E
+  A --> E

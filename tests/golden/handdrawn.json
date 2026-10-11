@@ -1,0 +1,264 @@
+{
+ "page": [
+  8.28,
+  4.0
+ ],
+ "shapes": [
+  {
+   "name": "G",
+   "master": null,
+   "text": [
+    [
+     "Group",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.82,
+    0.83,
+    0.01,
+    0.0
+   ],
+   "box": [
+    5.75,
+    2.34,
+    2.05,
+    1.18
+   ],
+   "geometry_sections": 0,
+   "relationships": "SUM(DEPENDSON(1,C))",
+   "container": true
+  },
+  {
+   "name": "A",
+   "master": null,
+   "text": [
+    [
+     "Start",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    1.72,
+    1.9,
+    0.57
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "Choice",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.01,
+    0.0,
+    0.0
+   ],
+   "box": [
+    2.81,
+    1.11,
+    1.79,
+    1.8
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "C",
+   "master": null,
+   "text": [
+    [
+     "Done",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.01,
+    0.0,
+    0.0
+   ],
+   "box": [
+    6.02,
+    2.6,
+    1.52,
+    0.4
+   ],
+   "geometry_sections": 0,
+   "relationships": "SUM(DEPENDSON(4,G))"
+  },
+  {
+   "name": "D",
+   "master": null,
+   "text": [
+    [
+     "Again",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.01
+   ],
+   "box": [
+    5.76,
+    0.48,
+    1.37,
+    1.45
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 32
+  },
+  {
+   "name": "B to C",
+   "master": "2",
+   "text": [
+    [
+     "yes",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.79,
+    0.54,
+    0.25,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "B:Connections.X2",
+    "end": "C:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 236
+  },
+  {
+   "name": "B to D",
+   "master": "2",
+   "text": [
+    [
+     "no",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [
+    0.8,
+    -0.53,
+    0.18,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "B:Connections.X3",
+    "end": "D:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 202
+  }
+ ]
+}

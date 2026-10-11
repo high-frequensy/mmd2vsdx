@@ -1,0 +1,8 @@
+{
+  "name": "mmd2vsdx-runtime",
+  "private": true,
+  "description": "Browser driver for mmd2vsdx. The exact version is on purpose; Mermaid itself is pinned in tools/fetch_assets.py because the converter reads Mermaid's SVG structure.",
+  "dependencies": {
+    "puppeteer-core": "25.13.0"
+  }
+}

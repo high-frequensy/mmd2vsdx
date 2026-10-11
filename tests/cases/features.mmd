@@ -1,0 +1,32 @@
+---
+config:
+  flowchart:
+    curve: basis
+---
+flowchart LR
+  A["`**Markdown** _italic_ text
+  second line`"] e1@--> B
+  e1@{ animate: true }
+  B --> C
+  C --> D
+  subgraph S1[One]
+    direction TB
+    B
+    C
+  end
+  subgraph S2[Two]
+    D
+  end
+  S1 --> S2
+  A --> S2
+  D --> D
+  img@{ img: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iI2U4MzM2ZCIvPjxjaXJjbGUgY3g9IjUiIGN5PSI1IiByPSIzIiBmaWxsPSIjZmZmIi8+PC9zdmc+", label: "Image", pos: "b", w: 60, h: 60, constraint: "on" }
+  ic@{ icon: "fa:user", form: "square", label: "User", pos: "t", h: 60 }
+  A --> img
+  img --> ic
+  click A "https://example.com" "Tooltip for A" _blank
+  click B href "https://example.org"
+  C:::hot
+  classDef hot fill:#f96,stroke:#333,stroke-width:4px
+  X["Unicode ☃ & <i>it</i> #quot;q#quot; #9829;"]
+  C --> X

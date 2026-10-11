@@ -1,0 +1,104 @@
+{
+ "page": [
+  5.27,
+  1.53
+ ],
+ "shapes": [
+  {
+   "name": "A",
+   "master": null,
+   "text": [],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    0.55,
+    1.58,
+    0.43
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "Plain then \u00a0\u00a0\u00a0 inline",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.2,
+    0.48,
+    1.58,
+    0.56
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "L_A_B_0 image",
+   "master": null,
+   "text": [],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": "#CCCCCC",
+   "text_box": [],
+   "box": [
+    2.48,
+    0.66,
+    0.3,
+    0.22
+   ],
+   "geometry_sections": 1
+  }
+ ]
+}

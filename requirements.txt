@@ -1,0 +1,3 @@
+# Only the checks and tests need these; mmd2vsdx.py itself is stdlib-only.
+xmlschema==4.2.0
+pillow==11.3.0

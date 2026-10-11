@@ -1,0 +1,12 @@
+---
+config:
+  look: handDrawn
+  handDrawnSeed: 7
+---
+flowchart LR
+  A[Start] --> B{Choice}
+  B -->|yes| C([Done])
+  B -.->|no| D((Again))
+  subgraph G[Group]
+    C
+  end

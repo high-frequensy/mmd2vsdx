@@ -1,0 +1,17 @@
+flowchart TB
+  a1[rect] --> a2(round) --> a3([stadium]) --> a4[[subroutine]] --> a5[(cyl)]
+  b1((circle)) --> b2>asym] --> b3{rhombus} --> b4{{hexagon}} --> b5[/para/]
+  c1[\alt\] --> c2[/trap\] --> c3[\trapalt/] --> c4(((dbl)))
+  a1 --o b1
+  a2 --x b2
+  a3 o--o b3
+  a4 x--x b4
+  a5 <--> b5
+  c1 -.- c2
+  c1 ---- c4
+  c2 == text ==> c3
+  c3 -. dotted .-> c4
+  a1 --> a1
+  a1 --> a2
+  e1 & e2 --> e3 & e4
+  e1 ~~~ e2

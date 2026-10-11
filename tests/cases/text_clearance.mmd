@@ -1,0 +1,54 @@
+flowchart TD
+  admins([Admins / Developers / oc, console, GitOps])
+  subgraph CP["Control plane nodes - RHCOS"]
+    CVO[Cluster Version Operator]
+    CO["Cluster Operators: authentication, ingress, dns, network, storage, monitoring, image-registry"]
+    SCH[kube-scheduler]
+    KCM[kube-controller-manager]
+    API["kube-apiserver / openshift-apiserver / oauth"]
+    ETCD[(etcd)]
+    MCO[Machine Config Operator]
+    OLM[Operator Lifecycle Manager]
+    MAPI[Machine API Operator]
+  end
+  subgraph CN["Compute nodes - RHCOS"]
+    KUBELET[kubelet]
+    CRIO[CRI-O]
+    OVN[OVN-Kubernetes]
+    PODS[Application pods]
+  end
+  subgraph PS["Platform services"]
+    PROM["Prometheus / Alertmanager"]
+    ING["Ingress: HAProxy router"]
+    DNS[CoreDNS]
+    REG["Internal image registry"]
+    WEB[Web console]
+  end
+  OSUS[(OpenShift Update Service)]
+  CAT[(Operator catalogs)]
+  CLOUD[("Cloud / hypervisor / bare metal provider")]
+  EXT([External clients])
+  admins --> API
+  CVO -->|manages| CO
+  CVO -->|manages| MCO
+  CVO -->|manages| OLM
+  CVO -->|manages| MAPI
+  CVO -->|update graph| OSUS
+  CO --> API
+  SCH --> API
+  KCM --> API
+  API --> ETCD
+  KUBELET -->|watch| API
+  MCO -->|MachineConfig to nodes| KUBELET
+  OLM --> CAT
+  MAPI -->|Machines| CLOUD
+  CLOUD --> KUBELET
+  KUBELET --> CRIO
+  CRIO --> PODS
+  OVN --> PODS
+  EXT --> ING
+  ING --> PODS
+  PODS --> DNS
+  PODS --> REG
+  CO -.-> PROM
+  PROM -.->|scrape| PODS

@@ -1,0 +1,12 @@
+---
+config:
+  layout: dagre
+  flowchart:
+    curve: basis
+---
+flowchart TD
+  A --> B
+  A --> C
+  B --> D
+  C -->|lbl| D
+  A --> D

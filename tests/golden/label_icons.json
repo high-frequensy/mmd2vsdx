@@ -1,0 +1,233 @@
+{
+ "page": [
+  9.42,
+  1.77
+ ],
+ "shapes": [
+  {
+   "name": "A",
+   "master": null,
+   "text": [
+    [
+     "\u00a0\u00a0\u00a0\u00a0 Car",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    0.65,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "Logo",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.32,
+    0.0
+   ],
+   "box": [
+    2.48,
+    0.48,
+    1.58,
+    0.8
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "C",
+   "master": null,
+   "text": [
+    [
+     "\u00a0\u00a0\u00a0\u00a0 User \u00a0\u00a0\u00a0\u00a0",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.48,
+    0.65,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "D",
+   "master": null,
+   "text": [
+    [
+     "done",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.36,
+    0.65,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "B to C",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "B:Connections.X2",
+    "end": "C:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "C to D",
+   "master": "2",
+   "text": [
+    [
+     "\u00a0\u00a0\u00a0\u00a0 fast",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.65,
+    0.01,
+    0.48,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "C:Connections.X2",
+    "end": "D:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "L_C_D_0 image",
+   "master": null,
+   "text": [],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": "#CCCCCC",
+   "text_box": [],
+   "box": [
+    6.48,
+    0.82,
+    0.18,
+    0.15
+   ],
+   "geometry_sections": 1
+  }
+ ]
+}

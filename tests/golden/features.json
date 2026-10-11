@@ -1,0 +1,522 @@
+{
+ "page": [
+  10.53,
+  5.1
+ ],
+ "shapes": [
+  {
+   "name": "S2",
+   "master": null,
+   "text": [
+    [
+     "Two",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#2DD4BF",
+    1.0,
+    "1"
+   ],
+   "fill": "#F0FDFA",
+   "text_box": [
+    0.91,
+    0.91,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.96,
+    2.15,
+    2.08,
+    1.36
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,D))",
+   "container": true
+  },
+  {
+   "name": "S1",
+   "master": null,
+   "text": [
+    [
+     "One",
+     "#000000",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#E879F9",
+    1.0,
+    "1"
+   ],
+   "fill": "#FDF4FF",
+   "text_box": [
+    2.13,
+    2.13,
+    0.0,
+    0.0
+   ],
+   "box": [
+    2.59,
+    2.81,
+    4.54,
+    1.22
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(1,B,C))",
+   "container": true
+  },
+  {
+   "name": "A",
+   "master": null,
+   "text": [
+    [
+     "Markdown",
+     "#28253D",
+     10.5,
+     1
+    ],
+    [
+     " ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "italic",
+     "#28253D",
+     10.5,
+     2
+    ],
+    [
+     "\ntext\nsecond line",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    1.72,
+    1.58,
+    0.91
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "B",
+   "master": null,
+   "text": [
+    [
+     "B",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    2.84,
+    3.06,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,S1))"
+  },
+  {
+   "name": "C",
+   "master": null,
+   "text": [
+    [
+     "C",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#333333",
+    4.0,
+    "1"
+   ],
+   "fill": "#FF9966",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.67,
+    3.06,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,S1))"
+  },
+  {
+   "name": "D",
+   "master": null,
+   "text": [
+    [
+     "D",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    8.21,
+    2.42,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1,
+   "relationships": "SUM(DEPENDSON(4,S2))"
+  },
+  {
+   "name": "ic",
+   "master": null,
+   "text": [
+    [
+     "User",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.22,
+    0.22,
+    -0.0,
+    0.86
+   ],
+   "box": [
+    7.96,
+    0.48,
+    0.78,
+    1.12
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "X",
+   "master": null,
+   "text": [
+    [
+     "Unicode \u2603 & ",
+     "#28253D",
+     10.5,
+     0
+    ],
+    [
+     "it",
+     "#28253D",
+     10.5,
+     2
+    ],
+    [
+     " \"q\"\n\u2665",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    7.96,
+    3.93,
+    1.58,
+    0.69
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "img",
+   "master": null,
+   "text": [
+    [
+     "Image",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    null,
+    0.0,
+    "0"
+   ],
+   "fill": null,
+   "text_box": [
+    0.09,
+    0.09,
+    0.71,
+    -0.0
+   ],
+   "box": [
+    4.55,
+    0.56,
+    0.62,
+    0.97
+   ],
+   "geometry_sections": 0
+  },
+  {
+   "name": "A to B",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "2"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X1",
+    "end": "B:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "B to C",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "B:Connections.X2",
+    "end": "C:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "C to D",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "C:Connections.X2",
+    "end": "D:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  },
+  {
+   "name": "S1 to S2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "S1:Connections.X1",
+    "end": "S2:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "A to S2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X2",
+    "end": "S2:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "D to D",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "D:Connections.X2",
+    "end": "D:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "A to img",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "A:Connections.X3",
+    "end": "img:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "img to ic",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "img:Connections.X2",
+    "end": "ic:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "C to X",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "C:Connections.X3",
+    "end": "X:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  }
+ ]
+}

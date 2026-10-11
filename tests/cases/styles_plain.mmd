@@ -1,0 +1,12 @@
+---
+title: Styled edges and plain labels
+---
+flowchart TD
+  A[Start here] --> B[Middle step with a fairly long label]
+  B --> C((End))
+  A -.->|skip| C
+  subgraph G[Group]
+    B
+  end
+  linkStyle 0 stroke:#d62728,stroke-width:4px
+  linkStyle 2 stroke:#1f77b4,stroke-dasharray:6 3

@@ -1,0 +1,11 @@
+node_modules/
+.venv/
+puppeteer.json
+tests/out/
+__pycache__/
+# Microsoft's Visio stencils are not redistributable: keep your own copy here (see docs/visio-stencils.md)
+stencils/
+# renders of those stencils
+tests/golden/stencils_network.png
+vendor/
+.browser/

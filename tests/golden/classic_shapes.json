@@ -1,0 +1,1170 @@
+{
+ "page": [
+  12.26,
+  10.5
+ ],
+ "shapes": [
+  {
+   "name": "a1",
+   "master": null,
+   "text": [
+    [
+     "rect",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.24,
+    9.55,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "a2",
+   "master": null,
+   "text": [
+    [
+     "round",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.02,
+    7.9,
+    1.56,
+    0.53
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "a3",
+   "master": null,
+   "text": [
+    [
+     "stadium",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.69,
+    6.31,
+    1.78,
+    0.47
+   ],
+   "geometry_sections": 208
+  },
+  {
+   "name": "a4",
+   "master": null,
+   "text": [
+    [
+     "subroutine",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    3.46,
+    4.6,
+    1.71,
+    0.34
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "a5",
+   "master": null,
+   "text": [
+    [
+     "cyl",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.21,
+    0.0
+   ],
+   "box": [
+    3.32,
+    2.78,
+    1.5,
+    0.89
+   ],
+   "geometry_sections": 2
+  },
+  {
+   "name": "b1",
+   "master": null,
+   "text": [
+    [
+     "circle",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    6.18,
+    7.2,
+    1.94,
+    1.94
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "b2",
+   "master": null,
+   "text": [
+    [
+     "asym",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.12,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.98,
+    6.31,
+    1.8,
+    0.47
+   ],
+   "geometry_sections": 12
+  },
+  {
+   "name": "b3",
+   "master": null,
+   "text": [
+    [
+     "rhombus",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.01,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.73,
+    4.12,
+    1.78,
+    1.78
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "b4",
+   "master": null,
+   "text": [
+    [
+     "hexagon",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    5.23,
+    2.75,
+    2.12,
+    0.95
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "b5",
+   "master": null,
+   "text": [
+    [
+     "para",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    4.22,
+    1.96,
+    1.94,
+    0.38
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "c1",
+   "master": null,
+   "text": [
+    [
+     "alt",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    1.01,
+    9.55,
+    1.94,
+    0.38
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "c2",
+   "master": null,
+   "text": [
+    [
+     "trap",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.72,
+    7.98,
+    1.94,
+    0.38
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "c3",
+   "master": null,
+   "text": [
+    [
+     "trapalt",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    0.48,
+    4.74,
+    2.41,
+    0.53
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "c4",
+   "master": null,
+   "text": [
+    [
+     "dbl",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    1.13,
+    0.48,
+    1.85,
+    1.85
+   ],
+   "geometry_sections": 2
+  },
+  {
+   "name": "e1",
+   "master": null,
+   "text": [
+    [
+     "e1",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    9.2,
+    9.55,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "e2",
+   "master": null,
+   "text": [
+    [
+     "e2",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    9.2,
+    7.69,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "e3",
+   "master": null,
+   "text": [
+    [
+     "e3",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    8.2,
+    6.31,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "e4",
+   "master": null,
+   "text": [
+    [
+     "e4",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#28253D",
+    2.0,
+    "1"
+   ],
+   "fill": "#FFFFFF",
+   "text_box": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "box": [
+    10.2,
+    6.31,
+    1.58,
+    0.47
+   ],
+   "geometry_sections": 1
+  },
+  {
+   "name": "a1 to a2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a1:Connections.X1",
+    "end": "a2:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "a2 to a3",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a2:Connections.X2",
+    "end": "a3:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "a3 to a4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a3:Connections.X2",
+    "end": "a4:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "a4 to a5",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a4:Connections.X2",
+    "end": "a5:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "b1 to b2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "b1:Connections.X1",
+    "end": "b2:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "b2 to b3",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "b2:Connections.X2",
+    "end": "b3:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "b3 to b4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "b3:Connections.X2",
+    "end": "b4:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "b4 to b5",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "b4:Connections.X2",
+    "end": "b5:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "c1 to c2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "c1:Connections.X1",
+    "end": "c2:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "c2 to c3",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "c2:Connections.X2",
+    "end": "c3:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "c3 to c4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "c3:Connections.X2",
+    "end": "c4:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 4
+  },
+  {
+   "name": "a1 to b1",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a1:Connections.X2",
+    "end": "b1:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "42"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "a2 to b2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a2:Connections.X3",
+    "end": "b2:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "23"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "a3 to b3",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a3:Connections.X3",
+    "end": "b3:Connections.X3"
+   },
+   "arrows": [
+    "42",
+    "42"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "a4 to b4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a4:Connections.X3",
+    "end": "b4:Connections.X3"
+   },
+   "arrows": [
+    "23",
+    "23"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "a5 to b5",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a5:Connections.X2",
+    "end": "b5:Connections.X2"
+   },
+   "arrows": [
+    "4",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "c1 to c2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "c1:Connections.X2",
+    "end": "c2:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "0"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "c1 to c4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "c1:Connections.X3",
+    "end": "c4:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "0"
+   ],
+   "reroute": "1",
+   "route": 9
+  },
+  {
+   "name": "c2 to c3",
+   "master": "2",
+   "text": [
+    [
+     "text",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    3.5,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [
+    0.08,
+    -1.43,
+    0.26,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "c2:Connections.X4",
+    "end": "c3:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "c3 to c4",
+   "master": "2",
+   "text": [
+    [
+     "dotted",
+     "#28253D",
+     10.5,
+     0
+    ]
+   ],
+   "line": [
+    "#000000",
+    2.0,
+    "3"
+   ],
+   "fill": null,
+   "text_box": [
+    -0.0,
+    -1.52,
+    0.43,
+    0.22,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "glue": {
+    "begin": "c3:Connections.X4",
+    "end": "c4:Connections.X3"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "a1 to a1",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a1:Connections.X3",
+    "end": "a1:Connections.X4"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "a1 to a2",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "a1:Connections.X5",
+    "end": "a2:Connections.X4"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 1
+  },
+  {
+   "name": "e1 to e3",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "e1:Connections.X1",
+    "end": "e3:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "e1 to e4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "e1:Connections.X2",
+    "end": "e4:Connections.X1"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 3
+  },
+  {
+   "name": "e2 to e3",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "e2:Connections.X1",
+    "end": "e3:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  },
+  {
+   "name": "e2 to e4",
+   "master": "2",
+   "text": [],
+   "line": [
+    "#000000",
+    2.0,
+    "1"
+   ],
+   "fill": null,
+   "text_box": [],
+   "glue": {
+    "begin": "e2:Connections.X2",
+    "end": "e4:Connections.X2"
+   },
+   "arrows": [
+    "0",
+    "4"
+   ],
+   "reroute": "1",
+   "route": 2
+  }
+ ]
+}
