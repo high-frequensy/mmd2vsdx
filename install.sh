@@ -17,7 +17,7 @@ else   # piped from curl: unpack the release next to nothing else of ours
   # ponytail: unpacks over an existing copy, so files deleted upstream stay behind; your stencils/ and downloads are kept
   curl -fsSL "https://github.com/$repo/archive/$ref.tar.gz" | tar -xz --strip-components=1 -C "$here"
 fi
-[ -d "$here/.venv" ] && [ -d "$here/node_modules" ] || "$here/setup.sh"
+PYTHONPATH="$here" python3 -m mmd2vsdx.runtime   # the one-time fetch of the browser driver and Mermaid; no test environment needed
 
 mkdir -p "$HOME/.local/bin"
 printf '#!/bin/sh\nPYTHONPATH="%s" exec python3 -m mmd2vsdx "$@"\n' "$here" > "$HOME/.local/bin/mmd2vsdx"
