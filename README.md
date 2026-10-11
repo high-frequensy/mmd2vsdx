@@ -4,14 +4,14 @@ Convert Mermaid **flowcharts** into editable Microsoft Visio `.vsdx` files that 
 
 | Mermaid's render | The `.vsdx` (libvisio preview) |
 |---|---|
-| ![Mermaid render](examples/shapes.png) | ![vsdx preview](examples/shapes_preview.png) |
+| ![Mermaid render](https://raw.githubusercontent.com/high-frequensy/mmd2vsdx/main/examples/shapes.png) | ![vsdx preview](https://raw.githubusercontent.com/high-frequensy/mmd2vsdx/main/examples/shapes_preview.png) |
 
 Mermaid computes the layout. mmd2vsdx then rebuilds the drawing as native Visio objects:
 
 | Mermaid | Visio |
 |---|---|
 | Nodes of any shape: classic syntax and every v11 `@{ shape: … }` shape | Shapes whose outline is Mermaid's geometry, scaled with the shape; fills, strokes, rounding, neo shadow |
-| `A@{ icon: "visio:PERIPH/Server" }` | A real Visio stencil master (any of ~9,200 from your own Visio stencil folder), glued and labelled. See [docs/visio-stencils.md](docs/visio-stencils.md) |
+| `A@{ icon: "visio:PERIPH/Server" }` | A real Visio stencil master (any of ~9,200 from your own Visio stencil folder), glued and labelled. See [docs/visio-stencils.md](https://github.com/high-frequensy/mmd2vsdx/blob/main/docs/visio-stencils.md) |
 | `img@{ img: … }` and `@{ icon: … }` nodes, `<img>`, `fa:fa-…` icons and `$$…$$` KaTeX math inside labels | The picture as a PNG inside the node's group (moves and scales with it); text keeps its place |
 | Subgraphs (nested too) | Real Visio **containers**: members move with the frame |
 | Edges (incl. `e1@-->` ids, `&` chains, self-loops, subgraph ends) | Visio **Dynamic connectors glued to both shapes** (they follow moved shapes); Mermaid's route (curves traced), rounded bends, solid/dotted/dashed/thick, animated (as dashed), triangle/circle/cross ends |
@@ -66,7 +66,7 @@ mmd2vsdx a.mmd b.mmd -o out/ --no-png
 | `--no-png` | Don't write Mermaid's reference PNG |
 | `--config FILE` | Mermaid config JSON (default `mermaid-config.json`: Arial, which Visio has; Mermaid's default web font is not available in Visio) |
 | `--reroute as-needed\|freely\|never` | How Visio may re-route connectors. Default `as-needed` keeps Mermaid's routes until something moves. |
-| `--stencils DIR` | Visio stencil library for `visio:` icons (default `stencils/` in the data folder, not included: copy it from your Visio install, see [docs/visio-stencils.md](docs/visio-stencils.md)) |
+| `--stencils DIR` | Visio stencil library for `visio:` icons (default `stencils/` in the data folder, not included: copy it from your Visio install, see [docs/visio-stencils.md](https://github.com/high-frequensy/mmd2vsdx/blob/main/docs/visio-stencils.md)) |
 | `--find TEXT` | List stencil shapes whose name, stencil or keywords contain TEXT, as `visio:STENCIL/NAME` |
 | `--wrap exact\|visio` | `exact` (default) puts Mermaid's line breaks in as hard breaks for a 1:1 look. `visio` keeps only explicit `<br>` breaks so text re-wraps when you resize shapes. |
 
@@ -136,12 +136,12 @@ tests/              cases, golden files, runner
 
 ## License and third-party material
 
-mmd2vsdx is MIT licensed ([LICENSE](LICENSE)). It is not affiliated with or endorsed by Microsoft; Visio is a
+mmd2vsdx is MIT licensed ([LICENSE](https://github.com/high-frequensy/mmd2vsdx/blob/main/LICENSE)). It is not affiliated with or endorsed by Microsoft; Visio is a
 Microsoft trademark.
 
 - `mmd2vsdx/data/visio2012.xsd` is Microsoft's published Visio schema, copied unmodified under the permission notice inside
   the file (the patches described above are applied in memory at load).
-- Microsoft's Visio stencils are not included. Bring your own from a Visio install; see [docs/visio-stencils.md](docs/visio-stencils.md).
+- Microsoft's Visio stencils are not included. Bring your own from a Visio install; see [docs/visio-stencils.md](https://github.com/high-frequensy/mmd2vsdx/blob/main/docs/visio-stencils.md).
 - Runtime dependencies are installed by `mmd2vsdx/runtime.py` from their own sources: [Mermaid](https://github.com/mermaid-js/mermaid) and
   [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)'s font embedder (MIT), puppeteer-core (Apache-2.0), KaTeX (MIT), Font Awesome Free
   (fonts OFL, icons CC BY 4.0), the Open Sans and Recursive fonts (OFL), xmlschema (MIT), Pillow (HPND).
