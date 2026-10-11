@@ -3,7 +3,7 @@
 and Chrome rasterises it. No watermark, real fonts. Limits: libvisio ignores connector Rounding and
 does not wrap text (fine for mmd2vsdx output, which uses hard line breaks).
 
-Usage: python3 vsdx_preview.py drawing.vsdx [out.png]      (needs libvisio's vsd2raw: brew install libvisio)
+Usage: python -m mmd2vsdx.vsdx_preview drawing.vsdx [out.png]      (needs libvisio's vsd2raw: brew install libvisio)
 """
 import html
 import os
@@ -12,11 +12,9 @@ import subprocess
 import sys
 import tempfile
 
-from mmd2vsdx import flatten_path
-
-HERE = os.path.dirname(os.path.realpath(__file__))
-MODULES = os.environ.get("MMDC_MODULES", os.path.join(HERE, "node_modules"))
-PPTR = os.environ.get("PUPPETEER_CONFIG", os.path.join(HERE, "puppeteer.json"))   # written by setup.sh
+from . import runtime
+from .convert import flatten_path
+from .runtime import DATA, PPTR
 PX = 96
 
 def props(s):
@@ -154,10 +152,10 @@ def to_svg(src, background=True):
 
 
 def render(svg, out_png):
+    runtime.ensure()
     svg_path = os.path.join(tempfile.mkdtemp(), "preview.svg")
     open(svg_path, "w").write(svg)
-    subprocess.run(["node", os.path.join(HERE, "shot.cjs"), svg_path, out_png, PPTR],
-                   env={**os.environ, "MMDC_MODULES": MODULES}, check=True)
+    subprocess.run(["node", os.path.join(DATA, "shot.cjs"), svg_path, out_png, PPTR], env=runtime.node_env(), check=True)
 
 
 if __name__ == "__main__":

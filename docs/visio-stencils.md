@@ -9,26 +9,24 @@ mmd2vsdx does **not** ship the stencils: they are Microsoft's, so you bring your
 
 ## 1. Set up (once)
 
-```bash
-./setup.sh
-```
-
-Then copy the `1033` folder (US English) out of your Visio install into this repo as `stencils/1033/`, or point
-mmd2vsdx at it with `--stencils DIR` or the `MMD2VSDX_STENCILS` environment variable. Typical locations:
+Install mmd2vsdx (see the [README](../README.md#install)). Then copy the `1033` folder (US English) out of your Visio
+install to `stencils/1033/` in the data folder (the checkout folder, or your cache folder: `mmd2vsdx --find x` prints the
+exact path when none is found), or point mmd2vsdx at it with `--stencils DIR` or the `MMD2VSDX_STENCILS` environment
+variable. Typical locations:
 
 | System | Folder |
 |---|---|
 | Windows (Microsoft 365 / 2016+) | `C:\Program Files\Microsoft Office\root\Office16\Visio Content\1033` |
 | Windows (32-bit Office) | `C:\Program Files (x86)\Microsoft Office\root\Office16\Visio Content\1033` |
 
-`stencils/` is in `.gitignore`, so your copy is never committed. Without it, diagrams that use `visio:` icons stop
+In a checkout, `stencils/` is in `.gitignore`, so your copy is never committed. Without it, diagrams that use `visio:` icons stop
 with a message saying so; everything else works.
 
 ## 2. Find the shapes you want
 
 ```bash
-./mmd2vsdx.py --find server          # name, stencil or keyword contains "server"
-./mmd2vsdx.py --find "3d"            # works on stencil titles too
+mmd2vsdx --find server          # name, stencil or keyword contains "server"
+mmd2vsdx --find "3d"            # works on stencil titles too
 ```
 
 Each line is the exact name to use, then the stencil's title:
@@ -86,7 +84,7 @@ flowchart LR
 ## 4. Convert
 
 ```bash
-./mmd2vsdx.py tests/cases/stencils_network.mmd -o out/
+mmd2vsdx tests/cases/stencils_network.mmd -o out/
 ```
 
 You get `out/network.vsdx` and `out/network.png`. The PNG is Mermaid's own render; it shows the stencil art too,
@@ -96,8 +94,8 @@ becomes its own `.vsdx`.
 Check a file without Visio:
 
 ```bash
-.venv/bin/python validate_vsdx.py out/network.vsdx
-.venv/bin/python vsdx_preview.py out/network.vsdx      # PNG of what LibreOffice's Visio reader sees
+python -m mmd2vsdx.validate_vsdx out/network.vsdx
+python -m mmd2vsdx.vsdx_preview out/network.vsdx      # PNG of what LibreOffice's Visio reader sees
 ```
 
 ## Having an assistant write the diagram
@@ -109,7 +107,7 @@ Tell it the syntax and give it the shape names, for example:
 > visio:PERIPH/User, visio:NETLOC/Cloud, visio:PERIPH/Firewall, visio:PERIPH/Server, visio:PERIPH/Mainframe.
 > Put each zone in a subgraph. Label connections with protocol and port.
 
-Paste the output of `./mmd2vsdx.py --find …` into the prompt so it only uses names that exist.
+Paste the output of `mmd2vsdx --find …` into the prompt so it only uses names that exist.
 
 ## How it works, and what to know
 

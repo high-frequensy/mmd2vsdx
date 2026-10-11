@@ -210,7 +210,7 @@ const PIC_CLASSES = ["fa", "fab", "fak", "fal", "far", "fas", "katex"];
     }
   }
   if (process.argv[4]) {
-    await page.addScriptTag({ path: path.join(__dirname, "vendor", "node_modules", "mermaid", "dist", "mermaid.min.js") });
+    await page.addScriptTag({ path: path.join(process.env.MMD2VSDX_VENDOR, "mermaid", "dist", "mermaid.min.js") });
     out.edges = await page.evaluate(async (src) => {
       mermaid.initialize({ startOnLoad: false });
       await mermaid.parse(src);   // registers the diagram types

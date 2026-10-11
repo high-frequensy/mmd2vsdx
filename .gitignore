@@ -7,5 +7,12 @@ __pycache__/
 stencils/
 # renders of those stencils
 tests/golden/stencils_network.png
-vendor/
 .browser/
+# generated at the checkout root by mmd2vsdx/runtime.py
+/package.json
+/package-lock.json
+/.browser/
+dist/
+build/
+*.egg-info/
+/vendor/

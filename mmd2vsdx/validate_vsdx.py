@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate every Visio XML part of a .vsdx/.vssx against Microsoft's published Visio 2013 schema (XSD 1.1).
 
-Usage: python3 validate_vsdx.py file.vsdx [more files...]     (needs: pip install xmlschema)
+Usage: python -m mmd2vsdx.validate_vsdx file.vsdx [more files...]     (needs: pip install xmlschema)
 Also checks the package plumbing Visio relies on: content types and relationship targets.
 Exit code 1 if anything is invalid.
 """
@@ -14,14 +14,14 @@ from xml.etree import ElementTree as ET
 
 import xmlschema
 
-HERE = os.path.dirname(os.path.realpath(__file__))
+from .runtime import DATA
 
 
 def load_schema():
     """Microsoft's published XSD (namespace retargeted to the shipping 2012/main), with fixes for places
     where it rejects files Visio itself writes. Each fix was confirmed against Microsoft-authored
     .vsdx/.vssx files (the template and the stencils under stencils/), which must validate clean."""
-    xsd = open(os.path.join(HERE, "schema", "visio2012.xsd"), encoding="utf-8").read()
+    xsd = open(os.path.join(DATA, "visio2012.xsd"), encoding="utf-8").read()
     # 1. section asserts compare against bare names (@N = Character), which XPath reads as a child element
     xsd = re.sub(r'test="@N = ([A-Za-z]+)"', lambda m: f"test=\"@N = '{m.group(1)}'\"", xsd)
     # 2. real parts carry xml:space on their roots and r:id on <Rel>
@@ -41,7 +41,7 @@ def load_schema():
     xsd = re.sub(r'(<xsd:complexType name="ConnectionRow_Type">.*?)(\s*</xsd:extension>)',
                  lambda m: m.group(1) + '\n                <xsd:attribute name="T" type="xsd:string" />' + m.group(2),
                  xsd, count=1, flags=re.S)
-    return xmlschema.XMLSchema11(xsd, base_url=os.path.join(HERE, "schema"))
+    return xmlschema.XMLSchema11(xsd, base_url=DATA)
 
 
 SCHEMA = load_schema()

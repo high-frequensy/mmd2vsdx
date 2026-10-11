@@ -1,5 +1,5 @@
 // Render a Mermaid file to SVG or PNG in Chrome: a small stand-in for `mmdc` (mermaid-cli) that needs only
-// puppeteer-core and the few files tools/fetch_assets.py puts in vendor/. It follows mermaid-cli's renderMermaid() step
+// puppeteer-core and the few files mmd2vsdx/runtime.py puts in vendor/. It follows mermaid-cli's renderMermaid() step
 // for step (same page set-up, fonts, Mermaid call, font embedding, screenshot), so the output is identical.
 // Usage: node render.cjs -i diagram.mmd -o out.svg|out.png -c mermaid-config.json -p puppeteer.json [-b white] [-s scale] [-q]
 const fs = require("fs");
@@ -7,8 +7,8 @@ const http = require("http");
 const path = require("path");
 
 const HERE = __dirname;
-const MODULES = process.env.MMDC_MODULES || path.join(HERE, "node_modules");
-const VENDOR = path.join(HERE, "vendor", "node_modules");
+const MODULES = process.env.MMDC_MODULES || path.join(HERE, "node_modules");   // MODULES and VENDOR are set by mmd2vsdx/runtime.py
+const VENDOR = process.env.MMD2VSDX_VENDOR || path.join(HERE, "vendor", "node_modules");
 const puppeteer = require(path.join(MODULES, "puppeteer-core"));
 
 const arg = (flag, dflt) => { const i = process.argv.indexOf(flag); return i < 0 ? dflt : process.argv[i + 1]; };
@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
   const definition = fs.readFileSync(input, "utf8");
   const mermaidConfig = configFile ? JSON.parse(fs.readFileSync(configFile, "utf8")) : {};
   const launch = Object.assign({ headless: "shell" }, pptrFile ? JSON.parse(fs.readFileSync(pptrFile, "utf8")) : {});
-  if (!launch.executablePath) throw new Error("no browser: set CHROME_PATH and re-run ./setup.sh (puppeteer.json needs an executablePath)");
+  if (!launch.executablePath) throw new Error("no browser: set CHROME_PATH and delete puppeteer.json in the data folder, then run again");
   const browser = await puppeteer.launch(launch);
   try {
     const page = await browser.newPage();

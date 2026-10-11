@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mmd2vsdx"
+dynamic = ["version"]
+description = "Convert Mermaid flowcharts into editable Microsoft Visio .vsdx files that match Mermaid's render"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["mermaid", "visio", "vsdx", "diagram", "converter", "flowchart"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+]
+
+[project.optional-dependencies]
+check = ["xmlschema==4.2.0", "pillow==11.3.0"]   # validate_vsdx and the test suite
+
+[project.scripts]
+mmd2vsdx = "mmd2vsdx.convert:main"
+
+[project.urls]
+Homepage = "https://github.com/high-frequensy/mmd2vsdx"
+Issues = "https://github.com/high-frequensy/mmd2vsdx/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "mmd2vsdx.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["mmd2vsdx*"]
+
+[tool.setuptools.package-data]
+mmd2vsdx = ["data/*"]

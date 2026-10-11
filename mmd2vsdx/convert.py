@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Convert a Mermaid flowchart into an editable .vsdx that matches Mermaid's own render 1:1.
 
-Usage: python3 mmd2vsdx.py diagram.mmd [more.mmd | notes.md ...] [-o out.vsdx|dir] [options]   (see --help)
+Usage: mmd2vsdx diagram.mmd [more.mmd | notes.md ...] [-o out.vsdx|dir] [options]   (see --help)
   Renders each diagram with the pinned Mermaid (render.cjs) using mermaid-config.json (Arial, so the font exists in
   Visio too), writes the matching reference PNG, then rebuilds the drawing as native Visio shapes:
   - nodes of any shape: Mermaid's outline (rect, polygon, circle, path incl. curves/arcs) becomes
@@ -11,7 +11,7 @@ Usage: python3 mmd2vsdx.py diagram.mmd [more.mmd | notes.md ...] [-o out.vsdx|di
   - edges: Visio Dynamic connectors glued to both shapes, same route, rounded bends, solid/dotted/
     thick strokes, triangle/circle/cross ends, labels at Mermaid's position with the same background
 Markdown input converts every ```mermaid block (name-1.vsdx, name-2.vsdx, ...).
-Run ./setup.sh once first. Env overrides: PUPPETEER_CONFIG, MMDC_MODULES.
+The first run sets up the browser driver and Mermaid (runtime.py). Env overrides: see runtime.py.
 """
 import argparse
 import base64
@@ -26,13 +26,11 @@ import tempfile
 from xml.etree import ElementTree as ET
 from zipfile import ZipFile, ZIP_DEFLATED
 
-HERE = os.path.dirname(os.path.realpath(__file__))
-TEMPLATE = os.path.join(HERE, "template", "base.vsdx")   # Microsoft-authored; carries the Dynamic connector master
-MODULES = os.environ.get("MMDC_MODULES", os.path.join(HERE, "node_modules"))
-RENDER = os.path.join(HERE, "render.cjs")   # Mermaid -> SVG/PNG in Chrome (puppeteer-core + vendor/)
-PPTR = os.environ.get("PUPPETEER_CONFIG", os.path.join(HERE, "puppeteer.json"))   # written by setup.sh
-CONFIG = os.path.join(HERE, "mermaid-config.json")
-STENCILS = os.environ.get("MMD2VSDX_STENCILS", os.path.join(HERE, "stencils"))   # Visio stencil library (.vssx)
+from . import runtime
+from .runtime import DATA, PPTR, STENCILS   # STENCILS: Visio stencil library (.vssx)
+TEMPLATE = os.path.join(DATA, "base.vsdx")   # carries the Dynamic connector master
+RENDER = os.path.join(DATA, "render.cjs")   # Mermaid -> SVG/PNG in Chrome (puppeteer-core + vendor/)
+CONFIG = os.path.join(DATA, "mermaid-config.json")
 REROUTE = {"freely": 0, "as-needed": 1, "never": 2}   # Visio ConFixedCode
 
 SVGNS = "{http://www.w3.org/2000/svg}"
@@ -256,7 +254,7 @@ _libraries = {}
 
 def library(path):
     if path not in _libraries:
-        import stencil_lib
+        from . import stencil_lib
         _libraries[path] = stencil_lib.Library(path)
     return _libraries[path]
 
@@ -278,8 +276,7 @@ def resolve_master(lib, query, prefer=()):
 
 def master_svg(m):
     """The master as libvisio draws it (SVG, transparent), and its native size in inches."""
-    import stencil_lib
-    import vsdx_preview
+    from . import stencil_lib, vsdx_preview
     with ZipFile(TEMPLATE) as z:
         pkg = {n: z.read(n) for n in z.namelist()}
     imp = stencil_lib.Importer(pkg)
@@ -338,6 +335,7 @@ def use_stencils(text, stencils):
 # ---------- render + measure ----------
 def convert(src, out_path, png_path=None, config=CONFIG, reroute="as-needed", wrap="exact", stencils=None):
     """Convert one .mmd file to out_path (.vsdx); optionally also write Mermaid's own PNG to png_path."""
+    runtime.ensure()
     tmp_svg = os.path.join(tempfile.mkdtemp(), "diagram.svg")
     text = open(src, encoding="utf-8").read()
     visio_icons = {}
@@ -356,9 +354,10 @@ def convert(src, out_path, png_path=None, config=CONFIG, reroute="as-needed", wr
             config = os.path.join(os.path.dirname(tmp_svg), "config.json")
             json.dump(cfg, open(config, "w", encoding="utf-8"))
     for target, extra in ((tmp_svg, []),) + (((png_path, ["-s", "2"]),) if png_path else ()):
-        subprocess.run(["node", RENDER, "-i", src, "-o", target, "-c", config, "-p", PPTR, "-b", "white", "-q", *extra], check=True)
-    measured_all = json.loads(subprocess.run(["node", os.path.join(HERE, "measure_lines.cjs"), tmp_svg, PPTR, src],
-                                         env={**os.environ, "MMDC_MODULES": MODULES},
+        subprocess.run(["node", RENDER, "-i", src, "-o", target, "-c", config, "-p", PPTR, "-b", "white", "-q", *extra],
+                       env=runtime.node_env(), check=True)
+    measured_all = json.loads(subprocess.run(["node", os.path.join(DATA, "measure_lines.cjs"), tmp_svg, PPTR, src],
+                                         env=runtime.node_env(),
                                          check=True, capture_output=True, text=True).stdout)
     measured = measured_all["labels"]
 
@@ -912,7 +911,7 @@ def convert(src, out_path, png_path=None, config=CONFIG, reroute="as-needed", wr
         # local frame of the Visio shape (x, y, w, h in SVG px): the node's box, or a stencil master's picture box
         fr = b["images"][0]["box"] if stencil else (b["x"], b["y"], b["w"], b["h"])
         if stencil:   # the node IS a stencil master instance (not nested: libvisio can't resolve nested instances)
-            importer = importer or __import__("stencil_lib").Importer(files)
+            importer = importer or __import__("mmd2vsdx.stencil_lib", fromlist=["Importer"]).Importer(files)
             s = importer.place(shapes, b["stencil"][0], next_id, X(fr[0]), Y(fr[1] + fr[3]), b["stencil"][1],
                                name=b["key"], shape_id=b["id"], blank_text=bool(b["text"] and b["text"]["runs"]))
             pl = pt = pr = pb = 0

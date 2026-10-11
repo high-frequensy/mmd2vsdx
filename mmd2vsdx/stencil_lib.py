@@ -18,6 +18,8 @@ import re
 import zipfile
 from xml.etree import ElementTree as ET
 
+from .runtime import STENCILS
+
 NS = "http://schemas.microsoft.com/office/visio/2012/main"
 REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 PKG_NS = "http://schemas.openxmlformats.org/package/2006/relationships"
@@ -108,7 +110,7 @@ class Library:
             sources = [(path, lambda: open(path, "rb").read())]
         if not sources:
             raise SystemExit(f"no Visio stencils (.vssx) found at {path!r}. mmd2vsdx does not ship Microsoft's stencils: copy the "
-                             "'Visio Content/1033' folder from your Visio install to ./stencils/1033, or point --stencils "
+                             f"'Visio Content/1033' folder from your Visio install to {STENCILS}/1033, or point --stencils "
                              "(or MMD2VSDX_STENCILS) at it. See docs/visio-stencils.md.")
         labels = {posixpath.basename(l).upper() for l, _ in sources}
         # both unit versions shipped: keep US units (_U), drop the metric twin (_M)

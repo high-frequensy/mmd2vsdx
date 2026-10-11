@@ -3,7 +3,7 @@
 
 For every tests/cases/<name>.mmd (optional <name>.config.json = Mermaid config, <name>.args = extra CLI flags):
   1. convert            -> tests/out/<name>.vsdx (+ Mermaid's reference PNG)
-  2. validate           -> patched Microsoft schema + glue/container consistency (validate_vsdx.py)
+  2. validate           -> patched Microsoft schema + glue/container consistency (mmd2vsdx/validate_vsdx.py)
   3. snapshot           -> structural JSON (shapes, text, colours, glue, containers) must equal tests/golden/<name>.json
   4. image (if libvisio)-> libvisio preview must match tests/golden/<name>.png (mean pixel diff)
 
@@ -25,6 +25,7 @@ from xml.etree import ElementTree as ET
 TESTS = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TESTS)
 sys.path.insert(0, ROOT)
+ENV = {**os.environ, "PYTHONPATH": ROOT}   # so `python -m mmd2vsdx` works from any directory
 V = "{http://schemas.microsoft.com/office/visio/2012/main}"
 IMAGE_TOLERANCE = 0.0002   # share of pixels allowed to differ visibly (>40/255) from the golden preview
 
@@ -92,8 +93,7 @@ def main():
     ap.add_argument("--update", action="store_true", help="rewrite golden files from current output")
     ap.add_argument("cases", nargs="*")
     a = ap.parse_args()
-    import mmd2vsdx
-    import validate_vsdx   # imported here so --help works without xmlschema
+    from mmd2vsdx import runtime, validate_vsdx   # imported here so --help works without xmlschema
     outdir = os.path.join(TESTS, "out")
     shutil.rmtree(outdir, ignore_errors=True)
     os.makedirs(outdir)
@@ -102,7 +102,7 @@ def main():
     if a.cases:
         cases = [c for c in cases if os.path.splitext(os.path.basename(c))[0] in a.cases]
     failures = skipped = 0
-    have_stencils = any(f.lower().endswith(".vssx") for _, _, fs in os.walk(mmd2vsdx.STENCILS) for f in fs)
+    have_stencils = any(f.lower().endswith(".vssx") for _, _, fs in os.walk(runtime.STENCILS) for f in fs)
     for case in cases:
         name = os.path.splitext(os.path.basename(case))[0]
         if "visio:" in open(case).read() and not have_stencils:   # Microsoft's stencils are not in the repo
@@ -112,13 +112,13 @@ def main():
         cfg = os.path.join(TESTS, "cases", name + ".config.json")
         vsdx, png = os.path.join(outdir, name + ".vsdx"), os.path.join(outdir, name + ".png")
         results = []
-        cmd = [sys.executable, os.path.join(ROOT, "mmd2vsdx.py"), case, "-o", vsdx]
+        cmd = [sys.executable, "-m", "mmd2vsdx", case, "-o", vsdx]
         if os.path.exists(cfg):
             cmd += ["--config", cfg]
         args = os.path.join(TESTS, "cases", name + ".args")   # optional extra CLI flags for this case
         if os.path.exists(args):
             cmd += shlex.split(open(args).read())
-        conv = subprocess.run(cmd, capture_output=True, text=True)
+        conv = subprocess.run(cmd, capture_output=True, text=True, env=ENV)
         if conv.returncode:
             print(f"FAIL {name}: convert\n{conv.stderr}")
             failures += 1
@@ -142,7 +142,7 @@ def main():
             results.append(("snapshot", not diffs, "; ".join(diffs[:4])))
         if have_libvisio:
             prev = os.path.join(outdir, name + "_preview.png")
-            subprocess.run([sys.executable, os.path.join(ROOT, "vsdx_preview.py"), vsdx, prev], capture_output=True, check=True)
+            subprocess.run([sys.executable, "-m", "mmd2vsdx.vsdx_preview", vsdx, prev], capture_output=True, check=True, env=ENV)
             gpng = os.path.join(TESTS, "golden", name + ".png")
             if a.update or not os.path.exists(gpng):
                 shutil.copy(prev, gpng)

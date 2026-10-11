@@ -22,10 +22,11 @@ from xml.etree import ElementTree as ET
 
 HERE = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 sys.path.insert(0, HERE)
-import stencil_lib  # noqa: E402
-from stencil_lib import Q  # noqa: E402
+from mmd2vsdx import stencil_lib  # noqa: E402
+from mmd2vsdx.stencil_lib import Q  # noqa: E402
+from mmd2vsdx.runtime import DATA  # noqa: E402
 
-TEMPLATE = os.path.join(HERE, "template", "base.vsdx")
+TEMPLATE = os.path.join(DATA, "base.vsdx")
 SCALE = 0.6
 GAP, PAGE_W = 0.4, 24.0
 # end points and boxes; arc radii are left out (libvisio turns a near-zero arc into a line at some scales)
@@ -91,7 +92,7 @@ def parsed(path):
 
 
 def check_master(m, tmp):
-    import vsdx_preview
+    from mmd2vsdx import vsdx_preview
     a, b = os.path.join(tmp, "native.vsdx"), os.path.join(tmp, "scaled.vsdx")
     build([m], 1.0, a, single=True)
     build([m], SCALE, b, single=True)
@@ -131,7 +132,7 @@ def check_stencil(args):
 
 
 def _check_stencil(path, outdir, previews):
-    import validate_vsdx
+    from mmd2vsdx import validate_vsdx
     st = stencil_lib.Stencil(path, lambda: open(path, "rb").read())
     masters = st.masters()
     if not masters:
@@ -145,7 +146,7 @@ def _check_stencil(path, outdir, previews):
     for m in masters:
         problems += [f"{m.name_u}: {p}" for p in check_master(m, tmp)]
     if previews:
-        import vsdx_preview
+        from mmd2vsdx import vsdx_preview
         native = os.path.join(outdir, f"{st.key}_native.vsdx")
         build(masters, 1.0, native)
         vsdx_preview.render(vsdx_preview.to_svg(native), native[:-5] + ".png")

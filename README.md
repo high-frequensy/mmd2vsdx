@@ -25,38 +25,39 @@ Mermaid computes the layout. mmd2vsdx then rebuilds the drawing as native Visio 
 | `classDef`, `style`, `linkStyle`, themes | Resolved CSS read from Chrome, so styling carries over |
 | `title:` front-matter | A text shape |
 
-## Get it
+## Install
+
+Needs Python 3.9+, Node 18+ and Chrome, Chromium or Edge (if none is found, Chrome for Testing is downloaded). Nothing else is
+installed globally. The first conversion fetches the browser driver and Mermaid (about 40 MB) into your cache folder, then every
+run is offline.
 
 ```bash
-git clone https://github.com/high-frequensy/mmd2vsdx.git
-cd mmd2vsdx
-./install.sh
+pipx install mmd2vsdx                 # or: uv tool install mmd2vsdx   /   uvx mmd2vsdx diagram.mmd
 ```
 
-## Install on a machine
+No pipx or uv? One line, from the latest release (installs into `~/.local/share/mmd2vsdx` and links `~/.local/bin/mmd2vsdx`):
 
 ```bash
-./install.sh     # runs setup.sh if needed, links `mmd2vsdx` into ~/.local/bin
+curl -fsSL https://raw.githubusercontent.com/high-frequensy/mmd2vsdx/main/install.sh | bash
 ```
 
-Then `mmd2vsdx diagram.mmd` works from any directory.
-
-## Setup (once)
+Or from a checkout, to hack on it (everything stays in the folder; also builds `.venv/` for the tests):
 
 ```bash
-./setup.sh
+git clone https://github.com/high-frequensy/mmd2vsdx.git && cd mmd2vsdx && ./setup.sh
+.venv/bin/python -m mmd2vsdx diagram.mmd
 ```
 
-Needs Node 18+, Python 3.9+ and Chrome/Chromium/Edge (or set `CHROME_PATH`; without one, setup downloads Chrome for Testing into `.browser/`).
-Everything installs inside this folder, about 40 MB in all: `node_modules/` (puppeteer-core), `vendor/` (pinned Mermaid, KaTeX and font files), `puppeteer.json`, `.venv/`.
-Optional: `brew install libvisio` for previews and image tests.
+Where the one-time files go: the checkout folder, else `~/Library/Caches/mmd2vsdx` (macOS), `~/.cache/mmd2vsdx` (Linux) or
+`%LOCALAPPDATA%\mmd2vsdx` (Windows); set `MMD2VSDX_HOME` to choose. Optional: `brew install libvisio` for previews and image tests.
+Windows is supported by the code but not yet tested.
 
 ## Use
 
 ```bash
-./mmd2vsdx.py diagram.mmd                 # -> diagram.vsdx + diagram.png (Mermaid's own render, for comparison)
-./mmd2vsdx.py notes.md -o out/            # every ```mermaid block -> out/notes-1.vsdx, notes-2.vsdx, ...
-./mmd2vsdx.py a.mmd b.mmd -o out/ --no-png
+mmd2vsdx diagram.mmd                 # -> diagram.vsdx + diagram.png (Mermaid's own render, for comparison)
+mmd2vsdx notes.md -o out/            # every ```mermaid block -> out/notes-1.vsdx, notes-2.vsdx, ...
+mmd2vsdx a.mmd b.mmd -o out/ --no-png
 ```
 
 | Option | Meaning |
@@ -65,18 +66,18 @@ Optional: `brew install libvisio` for previews and image tests.
 | `--no-png` | Don't write Mermaid's reference PNG |
 | `--config FILE` | Mermaid config JSON (default `mermaid-config.json`: Arial, which Visio has; Mermaid's default web font is not available in Visio) |
 | `--reroute as-needed\|freely\|never` | How Visio may re-route connectors. Default `as-needed` keeps Mermaid's routes until something moves. |
-| `--stencils DIR` | Visio stencil library for `visio:` icons (default `stencils/`, not included: copy it from your Visio install, see [docs/visio-stencils.md](docs/visio-stencils.md)) |
+| `--stencils DIR` | Visio stencil library for `visio:` icons (default `stencils/` in the data folder, not included: copy it from your Visio install, see [docs/visio-stencils.md](docs/visio-stencils.md)) |
 | `--find TEXT` | List stencil shapes whose name, stencil or keywords contain TEXT, as `visio:STENCIL/NAME` |
 | `--wrap exact\|visio` | `exact` (default) puts Mermaid's line breaks in as hard breaks for a 1:1 look. `visio` keeps only explicit `<br>` breaks so text re-wraps when you resize shapes. |
 
 ## Check a file without Visio
 
 ```bash
-.venv/bin/python validate_vsdx.py drawing.vsdx    # schema + glue/container consistency
-./vsdx_preview.py drawing.vsdx                    # PNG of what libvisio (LibreOffice's Visio reader) parses
+python -m mmd2vsdx.validate_vsdx drawing.vsdx    # schema + glue/container consistency (needs: pip install "mmd2vsdx[check]")
+python -m mmd2vsdx.vsdx_preview drawing.vsdx    # PNG of what libvisio (LibreOffice's Visio reader) parses
 ```
 
-`validate_vsdx.py` checks every part against Microsoft's published Visio 2013 schema (`schema/visio2012.xsd`, from
+`validate_vsdx` checks every part against Microsoft's published Visio 2013 schema (`mmd2vsdx/data/visio2012.xsd`, from
 [Schema map (Visio XML)](https://learn.microsoft.com/en-us/office/client-developer/visio/schema-mapvisio-xml)).
 Four documented fixes are applied at load, because the published schema rejects files Visio itself writes; Microsoft's
 own template validates clean with them. It also checks that every glue record matches the connector's glue
@@ -99,7 +100,7 @@ The JSON snapshots are portable.
 
 ## Pinned versions (what was tested)
 
-Mermaid 12.1.0 (pinned in `tools/fetch_assets.py`), puppeteer-core 25.13.0, Chrome 149, libvisio 0.1.11, xmlschema 4.2.0,
+Mermaid 12.1.0 (pinned in `mmd2vsdx/runtime.py`), puppeteer-core 25.13.0, Chrome 149, libvisio 0.1.11, xmlschema 4.2.0,
 Pillow 11.3.0, Python 3.9.6. The converter reads details of Mermaid's SVG
 (`data-points`, edge ids, CSS classes), so upgrade Mermaid deliberately and re-run the tests.
 
@@ -116,19 +117,20 @@ Pillow 11.3.0, Python 3.9.6. The converter reads details of Mermaid's SVG
 ## Layout
 
 ```
-mmd2vsdx.py         converter (stdlib only)
-render.cjs          Mermaid -> SVG/PNG in Chrome (puppeteer-core + vendor/)
-measure_lines.cjs   asks Chrome how it laid out the SVG: line breaks, label boxes, resolved colours
-shot.cjs            rasterises preview SVGs with Chrome
-vsdx_preview.py     libvisio-based preview of any .vsdx
-validate_vsdx.py    schema + glue/container validator
-stencil_lib.py      finds stencil masters and copies them (styles, media, colours) into a .vsdx as instances
-tools/fetch_assets.py  downloads the pinned Mermaid, KaTeX and font files into vendor/
-tools/stencil_sweep.py  checks every master of the stencil library (import, schema, drawing, scaling)
-stencils/1033/      your own copy of Microsoft's Visio stencils (US English); not in git
-template/base.vsdx  base document that provides Visio's Dynamic connector master
-schema/visio2012.xsd  Microsoft's published Visio schema
-mermaid-config.json default Mermaid config (Arial)
+mmd2vsdx/convert.py        converter (stdlib only)
+mmd2vsdx/runtime.py        data folder, and the one-time fetch of the browser driver, Mermaid and fonts
+mmd2vsdx/vsdx_preview.py   libvisio-based preview of any .vsdx
+mmd2vsdx/validate_vsdx.py  schema + glue/container validator
+mmd2vsdx/stencil_lib.py    finds stencil masters and copies them (styles, media, colours) into a .vsdx as instances
+mmd2vsdx/data/render.cjs        Mermaid -> SVG/PNG in Chrome (puppeteer-core + Mermaid from the data folder)
+mmd2vsdx/data/measure_lines.cjs asks Chrome how it laid out the SVG: line breaks, label boxes, resolved colours
+mmd2vsdx/data/shot.cjs          rasterises preview SVGs with Chrome
+mmd2vsdx/data/base.vsdx         base document that provides Visio's Dynamic connector master
+mmd2vsdx/data/visio2012.xsd     Microsoft's published Visio schema
+mmd2vsdx/data/mermaid-config.json  default Mermaid config (Arial)
+tools/stencil_sweep.py     checks every master of the stencil library (import, schema, drawing, scaling)
+examples/                  generic example diagrams and their .vsdx
+install.sh, setup.sh       one-line installer; checkout setup
 tests/              cases, golden files, runner
 ```
 
@@ -137,9 +139,9 @@ tests/              cases, golden files, runner
 mmd2vsdx is MIT licensed ([LICENSE](LICENSE)). It is not affiliated with or endorsed by Microsoft; Visio is a
 Microsoft trademark.
 
-- `schema/visio2012.xsd` is Microsoft's published Visio schema, copied unmodified under the permission notice inside
+- `mmd2vsdx/data/visio2012.xsd` is Microsoft's published Visio schema, copied unmodified under the permission notice inside
   the file (the patches described above are applied in memory at load).
 - Microsoft's Visio stencils are not included. Bring your own from a Visio install; see [docs/visio-stencils.md](docs/visio-stencils.md).
-- Runtime dependencies are installed by `setup.sh` from their own sources: [Mermaid](https://github.com/mermaid-js/mermaid) and
+- Runtime dependencies are installed by `mmd2vsdx/runtime.py` from their own sources: [Mermaid](https://github.com/mermaid-js/mermaid) and
   [mermaid-cli](https://github.com/mermaid-js/mermaid-cli)'s font embedder (MIT), puppeteer-core (Apache-2.0), KaTeX (MIT), Font Awesome Free
   (fonts OFL, icons CC BY 4.0), the Open Sans and Recursive fonts (OFL), xmlschema (MIT), Pillow (HPND).

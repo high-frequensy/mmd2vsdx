@@ -17,4 +17,4 @@ so Visio itself looks closer to the Mermaid render.
 | `handdrawn` | The handDrawn look |
 | `dark_theme` | A dark theme |
 
-Convert one yourself: `../mmd2vsdx.py shapes.mmd -o out/shapes.vsdx`
+Convert one yourself: `mmd2vsdx shapes.mmd -o out/shapes.vsdx`
